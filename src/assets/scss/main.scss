@@ -1,0 +1,17 @@
+@import "variables";
+@import "../../../static/scss/normalize";
+
+.container{
+  width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+h1,h2{
+  font-size: 2rem;
+  padding: 15px 0;
+}
+h3{
+  padding-bottom: 15px;
+  font-size: 1.5rem;
+}
