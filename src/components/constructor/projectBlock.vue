@@ -89,16 +89,17 @@
         width: 50%;
         display: inline-block;
         img{
-          height: 300px;
+          /*height: 300px;*/
           /*max-height: 370px;*/
-          /*width: 100%;*/
+          width: 100%;
         }
       }
       .project__info{
         z-index: 2;
         display: inline-block;
         vertical-align: top;
-        width: 50%;
+        width: calc(50% - 30px);
+        padding-left: 30px;
         transform: scale(1);
         transition: all .5s;
         font-size: 1rem;

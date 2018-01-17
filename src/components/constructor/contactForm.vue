@@ -2,10 +2,10 @@
     <div class="contactForm">
       <div class="container">
         <div class="contact__form">
-          <input type="text" placeholder="Name">
-          <input type="email" placeholder="Email">
-          <input type="text" placeholder="Subject">
-          <textarea placeholder="Message"></textarea>
+          <input v-model="message.userName" :class="{'input__error' : check && !isName}" type="text" placeholder="Name">
+          <input v-model="message.userEmail" :class="{'input__error' : check && !isMail}" type="email" placeholder="Email">
+          <input v-model="message.userSubject" :class="{'input__error' : check && !isSubject}" type="text" placeholder="Subject">
+          <textarea v-model="message.userMessage" :class="{'input__error' : check && !isMessage}" placeholder="Message"></textarea>
         </div>
         <div class="contact__info">
           <ul>
@@ -193,12 +193,18 @@
             </li>
           </ul>
           <button v-if="closeBtn" @click="closeForm()" class="btn__close">Close</button>
-          <button class="btn__send">Send</button>
+          <button class="btn__send" @click="sendForm(), check = true">Send</button>
         </div>
+      </div>
+      <div class="message__succes" :class="{'message__succes_active' : succes}">
+        <span>Message sent successfully</span>
       </div>
     </div>
 </template>
 <script>
+
+import {messageRef} from '../../firebase'
+
   export default {
     data: () => ({
       contacts: [
@@ -217,8 +223,30 @@
           text: 'Ukraine, Odessa',
           image: require('../../assets/svg/facebook-placeholder-for-locate-places-on-maps.svg')
         }
-      ]
+      ],
+      message: {
+        userName: '',
+        userEmail: '',
+        userSubject: '',
+        userMessage: ''
+      },
+      check: false,
+      succes: false
     }),
+    computed: {
+      isMail () {
+        return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(this.message.userEmail)
+      },
+      isName () {
+        return /[A-zА-яЁё]/.test(this.message.userName) && this.message.userName.length > 2
+      },
+      isSubject () {
+        return this.message.userSubject.length > 2
+      },
+      isMessage () {
+        return this.message.userMessage.length > 2
+      }
+    },
     props: {
       closeBtn: {
         type: Boolean,
@@ -228,6 +256,33 @@
     methods: {
       closeForm () {
         this.$emit('close')
+      },
+      sendForm () {
+        if (this.checkInput()) {
+          messageRef.push({
+            userMessage: this.message
+          })
+          this.succes = true
+          this.clearInput()
+        }
+      },
+      checkInput () {
+        if (this.isName === true && this.isMail === true && this.isSubject === true && this.isMessage === true) {
+          return true
+        }
+        else {
+          return false
+        }
+      },
+      clearInput () {
+        setTimeout(() => {
+          this.succes = false
+          this.check = false
+          this.message.userName = ''
+          this.message.userEmail = ''
+          this.message.userSubject = ''
+          this.message.userMessage = ''
+        }, 2500)
       }
     }
   }
@@ -239,17 +294,18 @@
   .contact__form,
   .contact__info{
     height: 365px;
-    width: 70%;
+    width: calc(70% - 30px);
     display: inline-block;
     vertical-align: top;
     margin: 50px 0;
+    padding: 0 15px;
     input{
       width: calc(50% - 60px);
       display: inline-block;
       margin: 15px 0;
-      border: 0;
+      border: 1px solid transparent;
       background: rgba(55, 57, 59, 0.7);
-      height: 50px;
+      height: 48px;
       font-size: 1rem;
       color: #8d8d8d;
       padding: 0 20px;
@@ -262,8 +318,11 @@
         width: calc(100% - 40px);
       }
     }
+    .input__error{
+      border-color: red;
+    }
     textarea{
-      border: 0;
+      border: 1px solid transparent;
       font-size: 1rem;
       padding: 20px;
       width: calc(100% - 40px);
@@ -278,10 +337,10 @@
   .contact__info{
     font-size: 1rem;
     color: $white;
-    width: 30%;
+    width: calc(30% - 30px);
     position: relative;
     ul{
-      padding: 15px 30px;
+      padding: 15px 0;
       li{
         font-size: 1.2rem;
         padding-bottom: 15px;
@@ -311,12 +370,37 @@
   .btn__close,
   .btn__send{
     @include button();
-    margin: 0 30px;
     position: absolute;
   }
   .btn__send{
     bottom: 0;
   }
 }
-
+  .message__succes{
+    height: 150px;
+    width: 300px;
+    background-color: $accent-color;
+    position: absolute;
+    /*top: 50%;*/
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    opacity: 0;
+    top: -1000px;
+    transition: all .5s;
+    span{
+      font-size: 1rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+  }
+  .message__succes_active{
+    opacity: 1;
+    top: 50%;
+  }
 </style>
