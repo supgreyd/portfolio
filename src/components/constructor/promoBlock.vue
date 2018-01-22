@@ -26,7 +26,7 @@
 
   .promo{
     width: 100%;
-    height: 582px;
+    height: 100vh;
     background-image: url("../../assets/images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -69,14 +69,21 @@
     .contactForm{
       z-index: 3;
       position: absolute;
-      bottom: 0;
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%) scale(0);
+      transform: translate(-50%, -50%) scale(0);
       transition: all .5s;
     }
     .contactForm_active{
-      transform: translateX(-50%) scale(1);
+      transform: translate(-50%, -50%) scale(1);
       transition: all .5s;
+    }
+  }
+  @media (max-width: 991px){
+    .promo{
+      .contactForm_active{
+        position: relative;
+      }
     }
   }
 

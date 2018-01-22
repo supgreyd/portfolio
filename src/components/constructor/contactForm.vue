@@ -7,8 +7,9 @@
           <input v-model="message.userSubject" :class="{'input__error' : check && !isSubject}" type="text" placeholder="Subject">
           <textarea v-model="message.userMessage" :class="{'input__error' : check && !isMessage}" placeholder="Message"></textarea>
         </div>
+        <!--<button class="btn__send btn__send_tab" @click="sendForm(), check = true">Send</button>-->
         <div class="contact__info">
-          <ul>
+          <ul :class="{'socials__hide' : closeBtn}">
             <li v-for="elem in contacts">
               <img :src="elem.image" alt="">
               <span>
@@ -16,7 +17,7 @@
               </span>
             </li>
           </ul>
-          <ul class="social">
+          <ul class="social" :class="{'socials__hide' : closeBtn}">
             <li><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 486.392 486.392" style="enable-background:new 0 0 486.392 486.392;" xml:space="preserve">
 <g>
@@ -375,6 +376,9 @@ import {messageRef} from '../../firebase'
   .btn__send{
     bottom: 0;
   }
+  .btn__send_tab{
+    display: none;
+  }
 }
   .message__succes{
     height: 150px;
@@ -402,5 +406,58 @@ import {messageRef} from '../../firebase'
   .message__succes_active{
     opacity: 1;
     top: 50%;
+  }
+  @media (max-width: 991px){
+    .contactForm{
+      .contact__form,
+      .contact__info{
+        width: calc(100% - 30px);
+      }
+      .contact__info{
+        margin: 0;
+        height: unset;
+        display: flex;
+        flex-wrap: wrap;
+        ul{
+          order: 2;
+          display: inline-block;
+          li{
+            display: inline-block;
+            padding-left: 10px;
+          }
+        }
+        .socials__hide{
+          display: none;
+        }
+        .btn__send,
+        .btn__close{
+          width: 100%;
+          position: relative;
+          margin-bottom: 15px;
+          order: 1;
+        }
+        .btn__close{
+          order: 2;
+        }
+      }
+      .btn__send_tab{
+        display: block;
+        position: relative;
+        width: calc(100% - 30px);
+        margin: 0 auto;
+        top: -20px;
+      }
+    }
+  }
+  @media (max-width: 767px){
+    .contactForm{
+      .contact__form{
+        height: unset;
+        margin: 15px 0;
+        input{
+          width: calc(100% - 40px);;
+        }
+      }
+    }
   }
 </style>

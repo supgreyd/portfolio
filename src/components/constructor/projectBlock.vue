@@ -161,4 +161,21 @@
       transition: all .5s;
     }
   }
+  @media (max-width: 767px) {
+    .projectBlock{
+      .project{
+        .project__info,
+        .project__image{
+          width: 100%;
+        }
+        .project__info{
+          padding-left: 0;
+          .btn__readMore{
+            width: 100%;
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+  }
 </style>

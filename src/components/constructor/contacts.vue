@@ -22,7 +22,7 @@
     background-size: cover;
     padding: 20px 0;
     font-size: 0;
-    height: 582px;
+    /*height: 582px;*/
     h2{
       text-align: center;
       color: $white;
