@@ -1,5 +1,5 @@
 <template>
-    <div class="projectBlock">
+    <div class="projectBlock" id="projects">
       <div class="overlay" :class="{'overlay_active' : projectActive}"></div>
       <div class="container">
         <h2>My projects</h2>
@@ -14,7 +14,7 @@
               </li>
             </ul>
             <span>{{ project.text }}</span>
-            <a :href = project.link>Visit web site</a>
+            <a :href = project.link target="_blank">Visit web site</a>
             <!--<button class="btn__readMore" @click="project.active = !project.active; popupActive()">Read more</button>-->
           </div>
         </div>
@@ -31,7 +31,7 @@
           description: 'Online store',
           tech: ['Vue.js', 'Node.js', 'MongoDB', 'Webpack'],
           image: 'http://res.cloudinary.com/dlcpvepa5/image/upload/q_auto:eco/v1516717636/vvlen_dih5s7.png',
-          text: 'osad uvbuy vbuy vfy vcuy vlvyv uyv',
+          text: 'On this project I work as a Frontend developer. I transformed single HTML file into vue components, made all the logic and  dynamics there, supporting SSR, and made requests for backend. Made whole mobile application from scratch',
           active: false,
           link: 'https://vvlen.com/'
         },

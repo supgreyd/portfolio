@@ -1,5 +1,5 @@
 <template>
-    <div class="promo">
+    <div class="promo" id="promo">
       <div class="promo__mask"></div>
       <div class="container">
         <h1 class="promo__title" :class="{ 'promo__button_active' : activeButton }">{{ title }}</h1>
@@ -48,7 +48,8 @@
       left: 50%;
       position: absolute;
       transform: translate(-50%, -50%) scale(1);
-      color: $white;
+      color: #b9b9b9;
+      z-index: 2;
     }
     .promo__button{
       position: absolute;

@@ -17,8 +17,8 @@
               </span>
             </li>
           </ul>
-          <ul class="social" :class="{'socials__hide' : closeBtn}">
-            <li><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          <div class="social" :class="{'socials__hide' : closeBtn}">
+            <a href="https://www.linkedin.com/in/konstantin-bozhyk/" target="_blank"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 486.392 486.392" style="enable-background:new 0 0 486.392 486.392;" xml:space="preserve">
 <g>
 	<g>
@@ -92,8 +92,8 @@
 </g>
 <g>
 </g>
-</svg></li>
-            <li><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+</svg></a>
+            <a href="https://github.com/supgreyd" target="_blank"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="438.549px" height="438.549px" viewBox="0 0 438.549 438.549" style="enable-background:new 0 0 438.549 438.549; fill: #427242;"
 	 xml:space="preserve">
 <g>
@@ -148,8 +148,8 @@
 </g>
 <g>
 </g>
-</svg></li>
-            <li><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+</svg></a>
+            <a href="https://www.facebook.com/profile.php?id=100017135327233" target="_blank"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="49.652px" height="49.652px" viewBox="0 0 49.652 49.652" style="enable-background:new 0 0 49.652 49.652; fill: #427242;"
 	 xml:space="preserve">
 <g>
@@ -191,8 +191,8 @@
 <g>
 </g>
 </svg>
-            </li>
-          </ul>
+            </a>
+          </div>
           <button v-if="closeBtn" @click="closeForm()" class="btn__close">Close</button>
           <button class="btn__send" @click="sendForm(), check = true">Send</button>
         </div>
@@ -358,8 +358,10 @@ import {messageRef} from '../../firebase'
       }
     }
     .social{
-      li{
+      padding: 15px 0;
+      a{
         display: inline-block;
+        padding-bottom: 15px;
         svg{
           height: 30px;
           width: 30px;
