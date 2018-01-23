@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-      <menu class="header__menu">
+      <menu class="header__menu" ref="headeMenu">
         <a class="menu__link" v-for="link in headerMenu">{{ link.name }}</a>
       </menu>
     </div>
@@ -38,8 +38,9 @@
       padding: 16px 0;
       margin: 0;
       border-bottom: 1px solid gray;
+      background-color: black;
+      color: $white;
       .menu__link{
-        color: $white;
         padding: 10px 20px;
         font-size: 1.25rem;
         text-transform: uppercase;

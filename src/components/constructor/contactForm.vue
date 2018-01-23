@@ -373,7 +373,7 @@ import {messageRef} from '../../firebase'
     @include button();
     position: absolute;
   }
-  .btn__send{
+  .btn__close{
     bottom: 0;
   }
   .btn__send_tab{

@@ -18,7 +18,7 @@
   @import "../../assets/scss/variables";
 
   .contact{
-    background: url("../../assets/images/question-mark-2492009_1280.jpg") center center no-repeat fixed;
+    background: url("../../assets/images/pexels-photo-326311.jpeg") center center no-repeat fixed;
     background-size: cover;
     padding: 20px 0;
     font-size: 0;
@@ -26,6 +26,9 @@
     h2{
       text-align: center;
       color: $white;
+    }
+    .btn__send{
+      bottom: 0;
     }
   }
 </style>

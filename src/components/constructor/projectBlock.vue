@@ -14,7 +14,8 @@
               </li>
             </ul>
             <span>{{ project.text }}</span>
-            <button class="btn__readMore" @click="project.active = !project.active; popupActive()">Read more</button>
+            <a :href = project.link>Visit web site</a>
+            <!--<button class="btn__readMore" @click="project.active = !project.active; popupActive()">Read more</button>-->
           </div>
         </div>
       </div>
@@ -28,41 +29,44 @@
         {
           name: 'VVLEN',
           description: 'Online store',
-          tech: ['Vue.js', 'Node.js'],
-          image: require('../../assets/images/VVLEN.png'),
+          tech: ['Vue.js', 'Node.js', 'MongoDB', 'Webpack'],
+          image: require('../../assets/images/vvlen.png'),
           text: 'osad uvbuy vbuy vfy vcuy vlvyv uyv',
-          active: false
+          active: false,
+          link: 'https://vvlen.com/'
         },
         {
           name: 'Air One',
-          description: 'Landing page',
+          description: 'Landing page, not commercial project',
           tech: ['jQuery', 'HTML', 'SASS', 'Bootstrap'],
           image: require('../../assets/images/airOne.png'),
-          text: 'osad uvbuy vbuy vfy vcuy vlvyv uyv osad uvbuy vbuy vfy vcuy vlvyv uyv osad uvbuy vbuy vfy vcuy vlvyv uyv osad uvbuy vbuy vfy vcuy vlvyv uyv osad uvbuy vbuy vfy vcuy vlvyv uyv osad uvbuy vbuy vfy vcuy vlvyv uyv',
-          active: false
+          text: 'Sample one page website. Here I use Bootstrap grid, jQuery to make the page more dinamic and I also use Google Maps API to costumize the map',
+          active: false,
+          link: 'https://supgreyd.github.io/air-one-page/'
         },
         {
           name: 'Hotel',
-          description: 'Landing page',
-          tech: ['jQuery', 'HTML', 'SASS'],
+          description: 'Landing page, not commercial project',
+          tech: ['jQuery', 'HTML', 'SASS', 'Gulp'],
           image: require('../../assets/images/hotel.png'),
-          text: 'osad uvbuy vbuy vfy vcuy vlvyv uyv',
-          active: false
+          text: 'Made this page responsive for any type of screen and I use Gulp to build a project',
+          active: false,
+          link: 'https://supgreyd.github.io/hotel/app/'
         },
         {
           name: 'Hospital',
-          description: 'Landing page',
-          tech: ['jQuery', 'HTML', 'SASS'],
+          description: 'Landing page, not commercial project',
+          tech: ['jQuery', 'HTML', 'SASS', 'Gulp', 'Bootstrap'],
           image: require('../../assets/images/medic.png'),
-          text: 'osad uvbuy vbuy vfy vcuy vlvyv uyv',
-          active: false
+          text: 'Sample one page website. Here I was learning how to use SASS and how to build project with Gulp',
+          active: false,
+          link: 'https://supgreyd.github.io/medic/dist'
         }
       ]
     }),
     methods: {
       popupActive () {
         this.projectActive = !this.projectActive
-        console.log(this.body)
       }
     }
   }
@@ -127,6 +131,15 @@
         span{
           display: block;
           margin-top: 15px;
+          margin-bottom: 30px;
+          line-height: 24px;
+        }
+        a{
+          color: $accent-color;
+          font-weight: bold;
+          &:hover{
+            text-decoration: none;
+          }
         }
       }
       .project__info_active{

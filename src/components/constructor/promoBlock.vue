@@ -27,6 +27,7 @@
   .promo{
     width: 100%;
     height: 100vh;
+    min-height: 700px;
     background-image: url("../../assets/images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
