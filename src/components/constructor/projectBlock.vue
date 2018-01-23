@@ -30,7 +30,7 @@
           name: 'VVLEN',
           description: 'Online store',
           tech: ['Vue.js', 'Node.js', 'MongoDB', 'Webpack'],
-          image: require('../../assets/images/vvlen.png'),
+          image: 'http://res.cloudinary.com/dlcpvepa5/image/upload/q_auto:eco/v1516717636/vvlen_dih5s7.png',
           text: 'osad uvbuy vbuy vfy vcuy vlvyv uyv',
           active: false,
           link: 'https://vvlen.com/'
@@ -39,7 +39,7 @@
           name: 'Air One',
           description: 'Landing page, not commercial project',
           tech: ['jQuery', 'HTML', 'SASS', 'Bootstrap'],
-          image: require('../../assets/images/airOne.png'),
+          image: 'http://res.cloudinary.com/dlcpvepa5/image/upload/q_auto:eco/v1516717362/airOne_qs73rn.png',
           text: 'Sample one page website. Here I use Bootstrap grid, jQuery to make the page more dinamic and I also use Google Maps API to costumize the map',
           active: false,
           link: 'https://supgreyd.github.io/air-one-page/'
@@ -48,7 +48,7 @@
           name: 'Hotel',
           description: 'Landing page, not commercial project',
           tech: ['jQuery', 'HTML', 'SASS', 'Gulp'],
-          image: require('../../assets/images/hotel.png'),
+          image: 'http://res.cloudinary.com/dlcpvepa5/image/upload/q_auto:eco/v1516717710/hotel_nnrlwd.png',
           text: 'Made this page responsive for any type of screen and I use Gulp to build a project',
           active: false,
           link: 'https://supgreyd.github.io/hotel/app/'
@@ -57,7 +57,7 @@
           name: 'Hospital',
           description: 'Landing page, not commercial project',
           tech: ['jQuery', 'HTML', 'SASS', 'Gulp', 'Bootstrap'],
-          image: require('../../assets/images/medic.png'),
+          image: 'http://res.cloudinary.com/dlcpvepa5/image/upload/q_auto:eco/v1516717661/medic_vzkh71.png',
           text: 'Sample one page website. Here I was learning how to use SASS and how to build project with Gulp',
           active: false,
           link: 'https://supgreyd.github.io/medic/dist'

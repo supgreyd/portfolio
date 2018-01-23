@@ -1,13 +1,14 @@
 import { initializeApp } from 'firebase'
 
 const app = initializeApp({
-  apiKey: "AIzaSyC59nwlJjvtUvX9NzdEGOsUkoFBHNKdOEw",
-  authDomain: "portfolio-613f6.firebaseapp.com",
-  databaseURL: "https://portfolio-613f6.firebaseio.com",
-  projectId: "portfolio-613f6",
-  storageBucket: "portfolio-613f6.appspot.com",
-  messagingSenderId: "534516068743"
+  apiKey: "AIzaSyDXxHj5WzNwFKCLKZ4Aei-uTYf7lMxxVLc",
+  authDomain: "konstantinbozhyk.firebaseapp.com",
+  databaseURL: "https://konstantinbozhyk.firebaseio.com",
+  projectId: "konstantinbozhyk",
+  storageBucket: "konstantinbozhyk.appspot.com",
+  messagingSenderId: "727988542465"
 })
 
 export const db = app.database()
 export const messageRef = db.ref('messages')
+

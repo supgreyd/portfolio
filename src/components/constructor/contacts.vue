@@ -18,7 +18,7 @@
   @import "../../assets/scss/variables";
 
   .contact{
-    background: url("../../assets/images/pexels-photo-326311.jpeg") center center no-repeat fixed;
+    background: url("http://res.cloudinary.com/dlcpvepa5/image/upload/q_10/v1516716564/pexels-photo-326311_gjo1xb.jpg") center center no-repeat fixed;
     background-size: cover;
     padding: 20px 0;
     font-size: 0;

@@ -28,7 +28,7 @@
     width: 100%;
     height: 100vh;
     min-height: 700px;
-    background-image: url("../../assets/images/background.jpg");
+    background-image: url("http://res.cloudinary.com/dlcpvepa5/image/upload/q_30/v1516717457/background_rxjpbx.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;

@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-      <menu class="header__menu" ref="headeMenu">
+      <menu class="header__menu" ref="headerMenu">
         <a class="menu__link" v-for="link in headerMenu">{{ link.name }}</a>
       </menu>
     </div>
@@ -22,7 +22,12 @@
           link: '/'
         }
       ]
-    })
+    }),
+    beforeMount () {
+      window.onscroll = function () {
+        console.log(this.$refs)
+      }
+    }
   }
 </script>
 <style lang="scss">
